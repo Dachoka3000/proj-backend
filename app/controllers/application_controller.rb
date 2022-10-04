@@ -16,5 +16,8 @@ class ApplicationController < Sinatra::Base
     book.to_json(include: :reviews)
   end
 
-  
+  get 'reviews/:id' do 
+    review = Review.find(params[:id])
+    review.to_json
+  end
 end
