@@ -9,8 +9,11 @@ Book.create(title: "Becoming", author: "Michelle Obama", likes: 0)
 
 
 
+all_reviews = ["This book is amazing!", "I love this book!", "This book is so good!", "I can't put this book down!", "This book is so interesting!"]
 
-
+Book.all.each do |book|
+    Review.create(text: all_reviews.sample, book_id: book.id)
+end
 
 
 puts "✅ Done seeding!"
